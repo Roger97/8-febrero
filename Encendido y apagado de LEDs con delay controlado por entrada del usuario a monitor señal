@@ -1,0 +1,42 @@
+Int led1 = 2;
+Int led2 = 3;
+Int led3 = 4;
+Int t1;
+Int t2;
+Int t3;
+
+Void setup() {
+Serial.begin(9600);
+Serial.println(“¿Cuanto tiempo para el led1?”)
+Delay(100)
+While(Serial.available()==0){
+}
+t1= Serial.parseint();
+pinMode(led1, OUTPUT);
+Serial.println(“¿Cuanto tiempo para el led2?”)
+Delay(5000)
+While(Serial.available()==0){
+}
+t2= Serial.parseint();
+pinMode(led2, OUTPUT);
+Serial.println(“¿Cuanto tiempo para el led3?”)
+Delay(5000)
+While(Serial.available()==0){
+}
+t3= Serial.parseint();
+pinMode(led3, OUTPUT);
+}
+Void loop(){
+digitalWrite(led1, HIGH);
+delay(t1);
+digitalWrite(led1, LOW);
+delay(t1);
+digitalWrite(led1, HIGH);
+delay(t2);
+digitalWrite(led1, LOW);
+delay(t2);
+digitalWrite(led1, HIGH);
+delay(t3);
+digitalWrite(led1, LOW);
+delay(t3);
+}
